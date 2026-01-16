@@ -1,0 +1,26 @@
+# Criar ambiente virtual
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# ou
+venv\Scripts\activate  # Windows
+
+# Instalar dependências
+pip install -r requirements.txt
+
+
+# Carregar fixtures
+python manage.py loaddata apps/products/fixtures/initial_products.json
+
+# Rodar comando
+python manage.py process_outbox
+
+
+# Depois
+# Criar migrações
+python manage.py makemigrations
+
+# Aplicar migrações
+python manage.py migrate
+
+# Criar superusuário
+python manage.py createsuperuser

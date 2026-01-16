@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scripts
+files-list.sh

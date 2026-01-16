@@ -1,0 +1,32 @@
+# 1. Criar estrutura básica
+mkdir -p apps/authentication apps/users apps/products apps/cart apps/orders apps/addresses apps/admin_stats
+mkdir -p domain/entities domain/errors domain/events domain/services domain/types
+mkdir -p application/ports application/usecases application/events application/handlers
+mkdir -p infrastructure/repositories infrastructure/factories infrastructure/middleware infrastructure/outbox/handlers infrastructure/transaction
+mkdir -p tests scripts
+
+# 2. Criar todos os __init__.py necessários
+touch apps/__init__.py apps/authentication/__init__.py apps/users/__init__.py apps/products/__init__.py apps/cart/__init__.py apps/orders/__init__.py apps/addresses/__init__.py apps/admin_stats/__init__.py
+touch domain/__init__.py domain/entities/__init__.py domain/errors/__init__.py domain/events/__init__.py domain/services/__init__.py domain/types/__init__.py
+touch application/__init__.py application/ports/__init__.py application/usecases/__init__.py application/events/__init__.py application/handlers/__init__.py
+touch infrastructure/__init__.py infrastructure/repositories/__init__.py infrastructure/factories/__init__.py infrastructure/middleware/__init__.py infrastructure/outbox/__init__.py infrastructure/outbox/handlers/__init__.py infrastructure/transaction/__init__.py
+touch tests/__init__.py
+
+# 3. Instalar dependências
+pip install -r requirements.txt
+
+# 4. Criar banco (PostgreSQL)
+createdb ecommerce
+
+# 5. Rodar migrações
+python manage.py makemigrations
+python manage.py migrate
+
+# 6. Criar superusuário
+python manage.py createsuperuser
+
+# 7. Rodar servidor
+python manage.py runserver
+
+# 8. Em outro terminal, rodar testes
+pytest

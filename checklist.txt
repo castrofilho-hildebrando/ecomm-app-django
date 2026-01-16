@@ -1,0 +1,73 @@
+# 1. Criar todos os __init__.py
+find . -type d -name "__pycache__" -prune -o -type d -print | while read dir; do touch "$dir/__init__.py"; done
+
+# 2. Rodar migrações
+python manage.py makemigrations
+python manage.py migrate
+
+# 3. Criar superusuário
+python manage.py createsuperuser
+
+# 4. Rodar testes
+pytest
+
+# 5. Rodar servidor
+python manage.py runserver
+
+# 6. Acessar admin
+# http://localhost:8000/admin
+
+# 7. Testar endpoints
+# http://localhost:8000/api/products/
+```
+
+## 11. Estrutura Final de Diretórios
+```
+ecommerce_backend/
+├── manage.py ✅
+├── requirements.txt ✅
+├── pytest.ini ✅
+├── .env ✅
+├── .env.example ✅
+├── .gitignore ⚠️ (criar)
+├── README.md ⚠️ (criar)
+├── Dockerfile ⚠️ (opcional)
+├── docker-compose.yml ⚠️ (opcional)
+├── config/
+│   ├── __init__.py ✅
+│   ├── settings.py ✅
+│   ├── urls.py ✅
+│   └── wsgi.py ✅
+├── apps/
+│   ├── __init__.py ⚠️
+│   ├── authentication/
+│   │   ├── __init__.py ⚠️
+│   │   ├── apps.py ⚠️
+│   │   ├── urls.py ✅
+│   │   └── views.py ✅
+│   ├── users/
+│   │   ├── __init__.py ⚠️
+│   │   ├── apps.py ⚠️
+│   │   ├── admin.py ⚠️
+│   │   ├── models.py ✅
+│   │   ├── urls.py ✅
+│   │   └── views.py ✅
+│   └── ... (outros apps)
+├── domain/
+│   ├── __init__.py ⚠️
+│   └── ... (já criado)
+├── application/
+│   ├── __init__.py ⚠️
+│   └── ... (já criado)
+├── infrastructure/
+│   ├── __init__.py ⚠️
+│   └── ... (já criado)
+├── tests/
+│   ├── __init__.py ⚠️
+│   ├── conftest.py ✅
+│   ├── factories.py ✅
+│   └── ... (testes)
+└── scripts/
+    ├── setup.sh ⚠️
+    ├── test.sh ⚠️
+    └── reset_db.sh ⚠️

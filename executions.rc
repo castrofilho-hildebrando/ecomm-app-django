@@ -1,0 +1,28 @@
+## Migration Files
+
+python manage.py makemigrations users
+python manage.py makemigrations products  
+python manage.py makemigrations cart
+python manage.py makemigrations orders
+python manage.py makemigrations addresses
+python manage.py migrate
+
+## Running the Application
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run migrations
+python manage.py migrate
+
+# Create superuser
+python manage.py createsuperuser
+
+# Run development server
+python manage.py runserver
+
+# Run tests
+pytest
+
+# Run tests with coverage
+pytest --cov=. --cov-report=html

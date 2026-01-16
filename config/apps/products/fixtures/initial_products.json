@@ -1,0 +1,26 @@
+[
+  {
+    "model": "products.product",
+    "pk": "11111111-1111-1111-1111-111111111111",
+    "fields": {
+      "name": "Notebook Dell",
+      "description": "Notebook Dell Inspiron 15",
+      "price": "3500.00",
+      "stock": 10,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": "22222222-2222-2222-2222-222222222222",
+    "fields": {
+      "name": "Mouse Logitech",
+      "description": "Mouse sem fio Logitech MX Master 3",
+      "price": "450.00",
+      "stock": 50,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  }
+]
